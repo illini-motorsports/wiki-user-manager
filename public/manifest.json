@@ -4,8 +4,11 @@
   "icons": [
     {
       "src": "iem.png",
-      "type": "image/png",
-      "sizes": "64x64"
+      "type": "image/png"
+    },
+    {
+      "src": "user_icon.png",
+      "type": "image/png"
     }
   ],
   "start_url": ".",

@@ -1,55 +1,67 @@
+import {FaGear} from 'react-icons/fa6';
 
 
-export default function Navbar(){
+export default function Navbar(props){
     return (
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                    <figure class="image">
-                        <img src="/iem.png"></img>
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand">
+                <a className="navbar-item" href="/">
+                    <figure className="image">
+                        <img src="/iem.png" alt="IEM"></img>
                     </figure>
                 </a>
 
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" href="/">
+                <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" href="/">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
             </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="/">
+            <div id="navbarBasicExample" className="navbar-menu">
+                <div className="navbar-start">
+                    <a className="navbar-item" href="/">
                         Home
                     </a>
 
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="/">
+                    <div className="navbar-item has-dropdown is-hoverable">
+                        <a className="navbar-link" href="/">
                             More
                         </a>
 
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item" href="https://wiki.motorsports.illinois.edu">
+                        <div className="navbar-dropdown">
+                            <a className="navbar-item" href="https://wiki.motorsports.illinois.edu" target="_blank" rel="noreferrer">
                                 Wiki
                             </a>
-                            <hr class="navbar-divider"></hr>
-                            <a class="navbar-item">
+                            <hr className="navbar-divider"></hr>
+                            <a className="navbar-item" href="https://github.com/illini-motorsports/wiki-user-manager/issues">
                                 Report an issue
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary">
+                <div className="navbar-end">
+                    <div className="navbar-item">
+                        <a href='/settings' onClick={(e) => {
+                            e.preventDefault();
+                            props.settingsActive(true);
+                        }}>
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <FaGear />
+                                </span>
+                                <span>Settings</span>
+                            </span>
+                        </a>
+                        {/* <div className="buttons">
+                            <a className="button is-primary">
                                 <strong>Sign up</strong>
                             </a>
-                            <a class="button is-light">
+                            <a className="button is-liifght">
                                 Log in
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
